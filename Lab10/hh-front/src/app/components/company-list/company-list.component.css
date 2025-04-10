@@ -1,0 +1,10 @@
+.company-card h2 {
+  margin-top: 0;
+  color: #0077B5;
+}
+
+.vacancies-container {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+}

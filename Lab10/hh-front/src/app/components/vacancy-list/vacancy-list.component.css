@@ -1,0 +1,13 @@
+.vacancy-card h3 {
+  margin-top: 0;
+  color: #0077B5;
+}
+
+.loading {
+  color: #666;
+}
+
+.no-vacancies {
+  color: #888;
+  font-style: italic;
+}

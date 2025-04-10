@@ -1,7 +1,20 @@
-<p>company-list works!</p>
-<ul>
-  <li *ngFor="let company of companies" (click)="selectCompany(company.id)">
-    {{ company.name }}
-  </li>
-</ul>
-<app-vacancy-list *ngIf="selectedCompanyId" [companyId]="selectedCompanyId"></app-vacancy-list>
+<div class="container">
+    <h1>Компании</h1>
+    
+    <div class="companies-list">
+        <div *ngIf="companies.length === 0" class="loading">
+            Загрузка компаний...
+        </div>
+        
+        <div *ngFor="let company of companies" class="company-card" 
+             [class.active]="company.id === selectedCompanyId"
+             (click)="selectCompany(company.id)">
+            <h2>{{ company.name }}</h2>
+            <p>{{ company.description }}</p>
+        </div>
+    </div>
+    
+    <div *ngIf="selectedCompanyId" class="vacancies-container">
+        <app-vacancy-list [companyId]="selectedCompanyId"></app-vacancy-list>
+    </div>
+</div>

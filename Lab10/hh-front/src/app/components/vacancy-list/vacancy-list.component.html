@@ -1,5 +1,19 @@
-<ul>
-  <li *ngFor="let vacancy of vacancies">
-    {{ vacancy.name }} - {{ vacancy.salary }}
-  </li>
-</ul>
+<div class="vacancies-list">
+  <div *ngIf="loading" class="loading">
+    Загрузка вакансий...
+  </div>
+  
+  <div *ngIf="error" class="error">
+    {{ error }}
+  </div>
+  
+  <div *ngIf="!loading && !error && vacancies.length === 0" class="no-vacancies">
+    Нет доступных вакансий для этой компании
+  </div>
+  
+  <div *ngFor="let vacancy of vacancies" class="vacancy-card">
+    <h3>{{ vacancy.name }}</h3>
+    <p>{{ vacancy.description }}</p>
+    <p class="salary"><strong>Зарплата:</strong> {{ vacancy.salary }} тг</p>
+  </div>
+</div>
