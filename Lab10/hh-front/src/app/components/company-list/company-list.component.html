@@ -1,0 +1,7 @@
+<p>company-list works!</p>
+<ul>
+  <li *ngFor="let company of companies" (click)="selectCompany(company.id)">
+    {{ company.name }}
+  </li>
+</ul>
+<app-vacancy-list *ngIf="selectedCompanyId" [companyId]="selectedCompanyId"></app-vacancy-list>
